@@ -15,7 +15,7 @@ class linearregression():
         X,y=sklearn.datasets.make_moons(200, noise=0.20)
         plt.scatter(X[:,0],X[:,1],s=14, c=y, cmap=plt.cm.Spectral)
         plt.show()
-   def load_dataset(self):
+    def load_dataset(self):
         seed=7
         np.random.seed(seed)
         dataset=np.loadtxt("games.csv", delimiter=",")
@@ -29,7 +29,8 @@ class linearregression():
         model.add(Dense(12, input_dim=8, init='uniform', activation='relu'))
         model.add(Dense(8, init='uniform', activation='relu'))
         model.add(Dense(1, init='uniform', activation='sigmoid'))
-
+        #compile model
+        model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 app =linearregression()
 
