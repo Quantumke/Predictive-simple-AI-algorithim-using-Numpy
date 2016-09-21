@@ -40,6 +40,10 @@ class linearregression():
         #scores=model.evaluate(X,Y)
         #print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
         predictions = model.predict(X)
+        # round predictions
+        rounded = [round(x) for x in predictions]
+        print(rounded)
+
 
 app =linearregression()
 
