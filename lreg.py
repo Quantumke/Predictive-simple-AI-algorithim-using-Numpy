@@ -15,7 +15,7 @@ class linearregression():
         X,y=sklearn.datasets.make_moons(200, noise=0.20)
         plt.scatter(X[:,0],X[:,1],s=14, c=y, cmap=plt.cm.Spectral)
         plt.show()
-    def load_dataset(self):
+   def load_dataset(self):
         seed=7
         np.random.seed(seed)
         dataset=np.loadtxt("games.csv", delimiter=",")
@@ -31,6 +31,11 @@ class linearregression():
         model.add(Dense(1, init='uniform', activation='sigmoid'))
         #compile model
         model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+            #Fit Model
+            #training goes for a number f iterations called epochs
+            #argument for this nb_epoch
+            #set number of instances to be evalated arg batch_size
+        model.fit(X, Y, nb_epoch=150, batch_size=20)
 
 app =linearregression()
 
