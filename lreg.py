@@ -36,6 +36,10 @@ class linearregression():
             #argument for this nb_epoch
             #set number of instances to be evalated arg batch_size
         model.fit(X, Y, nb_epoch=150, batch_size=20)
+           #evaluate model
+        #scores=model.evaluate(X,Y)
+        #print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+        predictions = model.predict(X)
 
 app =linearregression()
 
